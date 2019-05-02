@@ -1240,16 +1240,13 @@ class myCenters:
 
         if remove_centers:
             self.remove_centers(remove_centers)
-            print("removed", len(remove_centers), 'points!')
-                   
+            print("removed", len(remove_centers), 'points!')               
                     
 if __name__ == "__main__":
 
     import random
     import sys
     import time
-    from set_centers import get_centers
-
 
     NCenters = 2000
     maxPoints = 5000
@@ -1267,7 +1264,9 @@ if __name__ == "__main__":
     h = h0
     print("h0:",h0)
 
-    centers = get_centers(NCenters, points)
+    random.seed(16)
+    random_centers = random.sample(range(0,len(points)), NCenters)
+    centers = points[random_centers, :]
 
     myCenters = myCenters(centers, h, maxPoints = 2000)
     density_weights = get_density_weights(points, h0)

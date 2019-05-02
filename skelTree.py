@@ -1,7 +1,6 @@
 import numpy as np
 import random, os
 from utils import *
-from box_skeleton import get_boxes
 import time , sys
 import pickle
 
